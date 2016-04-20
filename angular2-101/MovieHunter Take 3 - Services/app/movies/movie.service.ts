@@ -1,5 +1,5 @@
-import {Injectable} from 'angular2/core';
-import {IMovie} from './movie';
+import { Injectable } from 'angular2/core';
+import { IMovie } from './movie';
 
 @Injectable()
 export class MovieService {
@@ -52,5 +52,4 @@ export class MovieService {
             }
         ];
     }
-
 }

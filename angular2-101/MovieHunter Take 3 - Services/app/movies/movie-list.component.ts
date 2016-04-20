@@ -1,8 +1,8 @@
-import {Component, OnInit}  from 'angular2/core';
+import { Component, OnInit }  from 'angular2/core';
 
-import {IMovie} from './movie';
-import {MovieService} from './movie.service';
-import {MovieFilterPipe} from './movieFilter.pipe';
+import { IMovie } from './movie';
+import { MovieService } from './movie.service';
+import { MovieFilterPipe } from './movieFilter.pipe';
 
 @Component({
     templateUrl: 'app/movies/movie-list.component.html',
