@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <base href="/">
     <title>InStep Movie Hunter</title>
 
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
@@ -12,16 +13,15 @@
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
     <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
-
+    
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
  
-    
-    <!-- Required for http -->
-    <script src="node_modules/angular2/bundles/http.dev.js"></script>
-    
+    <!-- Required for routing -->
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({

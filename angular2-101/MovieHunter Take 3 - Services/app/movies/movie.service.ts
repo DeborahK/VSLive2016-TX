@@ -41,7 +41,7 @@ export class MovieService {
             },
             {
                 'director': 'Fred Wolf',
-                'imageurl': null,
+                'imageurl': '',
                 'movieId': 4,
                 'mpaa': 'nr',
                 'releaseDate': '1971-02-02T00:00:00',

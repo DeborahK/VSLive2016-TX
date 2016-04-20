@@ -5,7 +5,6 @@ import {MovieService} from './movie.service';
 import {MovieFilterPipe} from './movieFilter.pipe';
 
 @Component({
-    selector: 'mh-movies',
     templateUrl: 'app/movies/movie-list.component.html',
     styleUrls: ['app/movies/movie-list.component.css'],
     pipes: [MovieFilterPipe],

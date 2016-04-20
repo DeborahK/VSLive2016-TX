@@ -4,7 +4,6 @@ import { IMovie } from './movie';
 import { MovieFilterPipe } from './movieFilter.pipe';
 
 @Component({
-    selector: 'mh-movies',
     templateUrl: 'app/movies/movie-list.component.html',
     styleUrls: ['app/movies/movie-list.component.css'],
     pipes: [MovieFilterPipe]
@@ -35,7 +34,7 @@ export class MovieListComponent {
             },
             {
                 'director': 'Fred Wolf',
-                'imageurl': null,
+                'imageurl': '',
                 'movieId': 4,
                 'mpaa': 'nr',
                 'releaseDate': '1971-02-02T00:00:00',
