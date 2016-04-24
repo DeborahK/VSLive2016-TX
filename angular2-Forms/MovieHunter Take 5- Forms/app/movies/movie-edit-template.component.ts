@@ -41,9 +41,9 @@ export class MovieEditTemplateComponent implements OnInit {
     }
 
     saveMovie(editForm: ControlGroup) {
+        console.log(editForm);
         if (editForm.dirty && editForm.valid) {
-            this.movie = editForm.value;
-            alert(`Movie: ${JSON.stringify(this.movie)}`);
+            alert(`Movie: ${JSON.stringify(editForm.value)}`);
         }
     }
 }
