@@ -108,9 +108,10 @@ export class MovieEditComponent implements OnInit {
     }
 
     saveMovie() {
-        if (this.editForm.dirty && this.editForm.valid) {
+         console.log(this.editForm);
+         if (this.editForm.dirty && this.editForm.valid) {
             this.movie = this.editForm.value;
-            alert(`Movie: ${JSON.stringify(this.movie)}`);
+            alert(`Movie: ${JSON.stringify(this.editForm.value)}`);
         }
     }
 }
