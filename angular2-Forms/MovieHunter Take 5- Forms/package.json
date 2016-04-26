@@ -2,7 +2,7 @@
   "name": "movie-hunter",
   "version": "1.0.0",
   "author": "Deborah Kurata",
-  "description": "Take 6: Completed Movie Hunter Application",
+  "description": "Take 5: Movie Hunter Application with Form",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "tsc": "tsc",
@@ -14,12 +14,12 @@
   },
   "license": "ISC",
   "dependencies": {
-    "angular2": "2.0.0-beta.15",
+    "angular2": "2.0.0-beta.16",
     "systemjs": "0.19.26",
     "es6-shim": "^0.35.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
-    "zone.js": "0.6.10",
+    "zone.js": "^0.6.12",
     "bootstrap": "^3.3.6"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "lite-server": "^2.2.0",
     "tslint": "^3.7.4",
     "typescript": "^1.8.10",
-    "typings": "^0.7.12"
+    "typings": "0.8.1"
   },
   "repository": {}
 }

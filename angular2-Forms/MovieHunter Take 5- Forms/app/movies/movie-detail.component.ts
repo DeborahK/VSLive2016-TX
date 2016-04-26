@@ -1,14 +1,14 @@
-import {Component, OnInit} from 'angular2/core';
-import {Router, RouteParams} from 'angular2/router';
+import { Component, OnInit } from 'angular2/core';
+import { ROUTER_DIRECTIVES, Router, RouteParams } from 'angular2/router';
 
-import {IMovie} from './movie';
-import {MovieService} from './movie.service';
-import {StarComponent} from '../shared/star.component';
+import { IMovie } from './movie';
+import { MovieService } from './movie.service';
+import { StarComponent } from '../shared/star.component';
 
 @Component({
     templateUrl: 'app/movies/movie-detail.component.html',
     styleUrls: ['app/movies/movie-detail.component.css'],
-    directives: [StarComponent]
+    directives: [StarComponent, ROUTER_DIRECTIVES]
 })
 export class MovieDetailComponent implements OnInit {
     pageTitle: string = 'Movie Detail';
