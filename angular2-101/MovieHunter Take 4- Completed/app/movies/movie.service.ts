@@ -19,7 +19,7 @@ export class MovieService {
     getMovie(id: number) {
         return this._http.get(this._moviesUrl)
             .map(res => this.handleMap(res, id))
-            .do(data => console.log('Data' + data))
+            .do(data => console.log('Data: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
 

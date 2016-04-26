@@ -1,22 +1,27 @@
-﻿<div class="panel panel-primary">
+﻿<div class="panel panel-primary"
+     *ngIf="movie">
     <div class="panel-heading">
-        {{ pageTitle + ": " + movie?.title }}
+        {{ pageTitle + ": " + movie.title }}
     </div>
 
     <div class="panel-body">
         <div class="has-error" *ngIf="errorMessage">{{errorMessage}}</div>
 
         <div class="row">
+            <div class="col-md-2">Description: </div>
+            <div class="col-md-10">{{ movie.description }}</div>
+        </div>
+        <div class="row">
             <div class="col-md-2">Director: </div>
-            <div class="col-md-10">{{ movie?.director }}</div>
+            <div class="col-md-10">{{ movie.director }}</div>
         </div>
         <div class="row">
             <div class="col-md-2">Release Date: </div>
-            <div class="col-md-10">{{ convertToDate(movie?.releaseDate) | date}}</div>
+            <div class="col-md-10">{{ convertToDate(movie.releaseDate) | date}}</div>
         </div>
         <div class="row">
             <div class="col-md-2">MPAA Film Rating: </div>
-            <div class="col-md-10">{{ movie?.mpaa | uppercase}}</div>
+            <div class="col-md-10">{{ movie.mpaa | uppercase}}</div>
         </div>
         <div class="row">
             <div class="col-md-2">Star Rating: </div>
@@ -24,11 +29,11 @@
         </div>
         <div class="row">
             <div class="col-md-2">Audience Approval: </div>
-            <div class="col-md-10">{{ movie?.approvalRating | percent:'1.0-0' }}</div>
+            <div class="col-md-10">{{ movie.approvalRating | percent:'1.0-0' }}</div>
         </div>
         <div class="row">
             <div class="col-md-2">Average DVD Price: </div>
-            <div class="col-md-10">{{ movie?.price | currency:'USD':true }}</div>
+            <div class="col-md-10">{{ movie.price | currency:'USD':true }}</div>
         </div>
     </div>
 
