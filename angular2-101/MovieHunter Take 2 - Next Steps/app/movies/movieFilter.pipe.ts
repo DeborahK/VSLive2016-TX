@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from 'angular2/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { IMovie } from './movie';
 
 @Pipe({
@@ -6,8 +6,8 @@ import { IMovie } from './movie';
 })
 export class MovieFilterPipe implements PipeTransform {
 
-    transform(value: any, args: string[]): any {
-        let filter: string = args[0] ? args[0].toLocaleLowerCase() : null;
+    transform(value: IMovie[], filter: string): IMovie[] {
+        filter = filter ? filter.toLocaleLowerCase() : null;
         return filter ? value.filter((movie: IMovie) =>
             movie.title.toLocaleLowerCase().search(filter) !== -1) : value;
     }

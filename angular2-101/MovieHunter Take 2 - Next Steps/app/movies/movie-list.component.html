@@ -40,7 +40,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="#movie of movies | movieFilter:listFilter">
+                    <tr *ngFor='let movie of movies| movieFilter:listFilter'>
                         <td>
                             <img *ngIf="showImage && movie.imageurl" 
                                  [style.width.px]="50"
@@ -53,7 +53,7 @@
                         <td>{{ convertToDate(movie.releaseDate) | date}}</td>
                         <td>{{ movie.mpaa | uppercase}}</td>
                         <td>{{ movie.price | currency:'USD':true}}</td>
-                        <td>{{ movie.starRating | number }} </td>
+                        <td>{{ movie.starRating | number }}</td>
                         <td>{{ movie.approvalRating | percent: '1.0-0'}}</td>
                     </tr>
                 </tbody>
