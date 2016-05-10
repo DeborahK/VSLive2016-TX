@@ -1,27 +1,26 @@
-import {Component, OnInit} from 'angular2/core';
-import {Router, RouteParams} from 'angular2/router';
+import { Component } from '@angular/core';
+import { Router, OnActivate, RouteSegment } from '@angular/router';
 
-import {IMovie} from './movie';
-import {MovieService} from './movie.service';
-import {StarComponent} from '../shared/star.component';
+import { IMovie } from './movie';
+import { MovieService } from './movie.service';
+import { StarComponent } from '../shared/star.component';
 
 @Component({
     templateUrl: 'app/movies/movie-detail.component.html',
     styleUrls: ['app/movies/movie-detail.component.css'],
     directives: [StarComponent]
 })
-export class MovieDetailComponent implements OnInit {
+export class MovieDetailComponent implements OnActivate {
     pageTitle: string = 'Movie Detail';
     movie: IMovie;
     errorMessage: string;
 
     constructor(private _movieService: MovieService,
-                private _router: Router,
-                private _routeParams: RouteParams) {
+                private _router: Router) {
     }
 
-    ngOnInit() {
-        let id = +this._routeParams.get('id');
+    routerOnActivate(curr: RouteSegment): void {
+        let id = +curr.getParam('id');
         this.getMovie(id);
     }
 
@@ -33,11 +32,10 @@ export class MovieDetailComponent implements OnInit {
     }
 
     onBack() {
-        this._router.navigate(['Movies']);
+        this._router.navigate(['/movies']);
     }
 
     convertToDate(dateString: string): Date {
         return new Date(dateString);
     }
-
 }

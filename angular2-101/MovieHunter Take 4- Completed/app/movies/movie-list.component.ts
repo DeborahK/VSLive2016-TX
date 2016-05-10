@@ -1,10 +1,10 @@
-import {Component, OnInit}  from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {Component, OnInit}  from '@angular/core';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
-import {IMovie} from './movie';
-import {MovieService} from './movie.service';
-import {MovieFilterPipe} from './movieFilter.pipe';
-import {StarComponent} from '../shared/star.component';
+import { IMovie } from './movie';
+import { MovieService } from './movie.service';
+import { MovieFilterPipe } from './movieFilter.pipe';
+import { StarComponent } from '../shared/star.component';
 
 @Component({
     templateUrl: 'app/movies/movie-list.component.html',
