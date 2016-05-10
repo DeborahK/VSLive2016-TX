@@ -1,6 +1,6 @@
-import { Component, OnInit } from 'angular2/core';
-import { FormBuilder, ControlGroup, Validators } from 'angular2/common';
-import { ROUTER_DIRECTIVES, RouteParams } from 'angular2/router';
+import { Component } from '@angular/core';
+import { FormBuilder, ControlGroup, Validators } from '@angular/common';
+import { ROUTER_DIRECTIVES, OnActivate, RouteSegment } from '@angular/router';
 
 import { IMovie } from './movie';
 import { MovieService } from './movie.service';
@@ -10,7 +10,7 @@ import { NumberValidator } from '../shared/number.validator';
     templateUrl: 'app/movies/movie-edit.component.html',
     directives: [ROUTER_DIRECTIVES]
 })
-export class MovieEditComponent implements OnInit {
+export class MovieEditComponent implements OnActivate {
     pageTitle: string = 'Edit Movie';
     editForm: ControlGroup;
     formError: { [id: string]: string };
@@ -19,8 +19,7 @@ export class MovieEditComponent implements OnInit {
     errorMessage: string;
 
     constructor(private _fb: FormBuilder,
-        private _movieService: MovieService,
-        private _routeParams: RouteParams) {
+        private _movieService: MovieService) {
 
         // Initialization of strings
         this.formError = {
@@ -47,8 +46,8 @@ export class MovieEditComponent implements OnInit {
         };
     }
 
-    ngOnInit() {
-        let id = +this._routeParams.get('id');
+    routerOnActivate(curr: RouteSegment): void {
+        let id = +curr.getParam('id');
         this.getMovie(id);
     }
 

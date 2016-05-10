@@ -1,14 +1,14 @@
-import { Injectable } from 'angular2/core';
-import { Http, Response } from 'angular2/http';
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 import { IMovie } from './movie';
 
 @Injectable()
 export class MovieService {
-    constructor(private _http: Http) { }
-
     private _moviesUrl = 'app/movies/movies.json';
+
+    constructor(private _http: Http) { }
 
     getMovies() {
         return this._http.get(this._moviesUrl)
