@@ -1,5 +1,6 @@
-import { Component } from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
+import { Component } from '@angular/core';
+import { Routes, Router, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
+
 import { MovieListComponent } from './movies/movie-list.component';
 
 @Component({
@@ -13,9 +14,11 @@ import { MovieListComponent } from './movies/movie-list.component';
     directives: [ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS]
 })
-@RouteConfig([
-    { path: '/movies', name: 'Movies', component: MovieListComponent, useAsDefault: true }
+@Routes([
+    { path: '/', component: MovieListComponent }
 ])
 export class AppComponent {
     pageTitle: string = 'InStep Movie Hunter';
+
+    constructor(private router: Router) {}
 }

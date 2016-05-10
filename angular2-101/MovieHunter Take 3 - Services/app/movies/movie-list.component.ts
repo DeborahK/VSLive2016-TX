@@ -1,4 +1,4 @@
-import { Component, OnInit }  from 'angular2/core';
+import { Component, OnInit }  from '@angular/core';
 
 import { IMovie } from './movie';
 import { MovieService } from './movie.service';
@@ -11,7 +11,7 @@ import { MovieFilterPipe } from './movieFilter.pipe';
     providers: [MovieService]
 })
 export class MovieListComponent implements OnInit {
-    pageTitle: string = 'InStep Movie List';
+    pageTitle: string = 'Movie List';
     listFilter: string = '';
     showImage: boolean = false;
     movies: IMovie[];
